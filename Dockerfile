@@ -8,4 +8,4 @@ ADD server.crt /usr/local/share/ca-certificates/server.crt
 
 RUN chmod 644 /usr/local/share/ca-certificates/server.crt && update-ca-certificates
 
-CMD ["java","-jar","app.jar"]
+CMD ["java",'"-Duser.timezone="Asia/Kolkata"',"-jar","app.jar"]
