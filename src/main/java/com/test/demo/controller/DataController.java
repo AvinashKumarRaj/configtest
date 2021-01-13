@@ -27,6 +27,6 @@ public class DataController {
     @GetMapping(value = "/check")
     public ResponseEntity<Object> check()
     {
-    	return new ResponseEntity<>("Ok",HttpStatus.OK);
+    	return new ResponseEntity<>("success",HttpStatus.OK);
     }
 }
