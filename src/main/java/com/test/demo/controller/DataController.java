@@ -2,6 +2,9 @@ package com.test.demo.controller;
 
 import com.test.demo.CustomerAlertSubscription;
 import com.test.demo.repository.DataRepository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -17,6 +20,9 @@ public class DataController {
 
     @Autowired
     private DataRepository dataRepository;
+    
+	private static Logger logger = LoggerFactory.getLogger(DataController.class);
+
 
     @GetMapping(value="/value")
     public List<CustomerAlertSubscription> findData() {
@@ -27,6 +33,7 @@ public class DataController {
     @GetMapping(value = "/check")
     public ResponseEntity<Object> check()
     {
-    	return new ResponseEntity<>("liveness & readness apply sucessful",HttpStatus.OK);
+    	logger.error("logger testing");
+    	return new ResponseEntity<>("Ok",HttpStatus.OK);
     }
 }
