@@ -27,6 +27,6 @@ public class DataController {
     @GetMapping(value = "/check")
     public ResponseEntity<Object> check()
     {
-    	return new ResponseEntity<>("readness apply sucessful",HttpStatus.OK);
+    	return new ResponseEntity<>("liveness & readness apply sucessful",HttpStatus.OK);
     }
 }
