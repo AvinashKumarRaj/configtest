@@ -10,25 +10,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.test.demo.entity.Response;
-import com.test.demo.entity.Employee;
 import com.test.demo.repository.EmployeeRepository;
+import com.test.demo.entity.Employee;
 
 
 @RestController
-@RequestMapping("/employeeService")
+@RequestMapping(value="/employeeService")
 public class EmployeeController {
+	
 	@Autowired
 	private EmployeeRepository repository;
 
-	@PostMapping("/addEmployee")
+	@PostMapping(value="/addEmployee")
 	public Response addEmployee(@RequestBody Employee employee) {
-		repository.save(employee);
-		return new Response(employee.getId() + " inserted", Boolean.TRUE);
+		Response response=new Response();
+		try {
+			repository.save(employee);
+			response.setMessage(employee.getId() + " inserted");
+			response.setStatus(Boolean.TRUE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return response;
 	}
 
-	@GetMapping("/getEmployees")
+	@GetMapping(value="/getEmployees")
 	public Response getAllEmployees() {
-		List<Employee> employees = repository.findAll();
-		return new Response("record counts : " + employees.size(), Boolean.TRUE);
+		Response response=new Response();
+		try {
+			List<Employee> employees = repository.findAll();
+			response.setMessage("record counts : " + employees.size());
+			response.setStatus(Boolean.TRUE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return response;
 	}
 }
