@@ -1,4 +1,4 @@
-package com.test.demo.entity;
+package com.test.demo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +8,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="employee")
 public class Employee {
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String name;
 	private String dept;

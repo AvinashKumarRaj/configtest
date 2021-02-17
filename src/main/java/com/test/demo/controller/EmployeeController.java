@@ -22,11 +22,11 @@ public class EmployeeController {
 	private EmployeeRepository repository;
 
 	@PostMapping(value="/addEmployee")
-	public Response addEmployee(@RequestBody Employee employee) {
+	public Response addEmployee(@RequestBody Employee emp) {
 		Response response=new Response();
 		try {
-			repository.save(employee);
-			response.setMessage(employee.getId() + " inserted");
+			repository.save(emp);
+			response.setMessage(emp.getId() + " inserted");
 			response.setStatus(Boolean.TRUE);
 		} catch (Exception e) {
 			e.printStackTrace();
