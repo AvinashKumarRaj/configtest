@@ -1,6 +1,6 @@
 package com.test.demo.controller;
 
-import com.test.demo.CustomerAlertSubscription;
+import com.test.demo.entity.CustomerAlertSubscription;
 import com.test.demo.repository.DataRepository;
 
 import org.slf4j.Logger;
