@@ -51,6 +51,11 @@ public class SpringBootMockitoApplicationTests {
 		InputRequest inputRequest=new InputRequest();
 		User user=inputRequest.getRequestData().getUser();
 		user = new User(999, "Pranya", 33, "Pune","pranya@gmail.com");
+//		user.setId(999);
+//		user.setName("Pranya");
+//		user.setAge(33);
+//		user.setAddress("Pune");
+//		user.setEmail("pranya@gmail.com");
 		when(repository.save(user)).thenReturn(user);
 		assertEquals(user, service.addUser(inputRequest));
 	}
