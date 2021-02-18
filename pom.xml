@@ -19,7 +19,6 @@
 	</properties>
 
 	<dependencies>
-	
 		<dependency>
 		    <groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
@@ -66,19 +65,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>
 				<version>3.3.0.603</version>
-					<executions>
-						<execution>
-							<phase>verify</phase>
-								<goals>
-									<goal>sonar</goal>
-								</goals>
-						</execution>
-					</executions>
-			</plugin>
+			</plugin> -->
+			
+			 <plugin>
+		        <groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
+		        <artifactId>sonar-packaging-maven-plugin</artifactId>
+		        <extensions>true</extensions>
+		        <configuration>
+         			 <pluginClass>org.sonarqube.plugins.example.ExamplePlugin</pluginClass>
+       			 </configuration>
+      		</plugin>
 		</plugins>
 	</build>
 
