@@ -20,6 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.test.demo.entity.Employee;
 import com.test.demo.entity.Response;
+import com.test.demo.request.InputRequest;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -38,7 +39,8 @@ public class SpringMockitoApplicationTests {
 
 	@Test
 	public void addEmployeeTest() throws Exception {
-		Employee employee = new Employee();
+		InputRequest request = new InputRequest();
+		Employee employee=request.getRequestData().getEmployee();
 		employee.setName("rahul");
 		employee.setDept("IT");
 		String jsonRequest = om.writeValueAsString(employee);
@@ -47,8 +49,6 @@ public class SpringMockitoApplicationTests {
 		String resultContent = result.getResponse().getContentAsString();
 		Response response = om.readValue(resultContent, Response.class);
 		Assert.assertTrue(response.isStatus() == Boolean.TRUE);
-		
-
 	}
 
 	@Test

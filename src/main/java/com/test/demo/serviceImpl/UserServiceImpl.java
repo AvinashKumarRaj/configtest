@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.test.demo.entity.User;
 import com.test.demo.repository.UserRepository;
+import com.test.demo.request.InputRequest;
 import com.test.demo.service.UserService;
 
 @Service
@@ -16,9 +17,9 @@ public class UserServiceImpl implements UserService {
 	private UserRepository repository;
 
 	@Override
-	public User addUser(User user) {
+	public User addUser(InputRequest inputRequest) {
 		
-		return repository.save(user);
+		return repository.save(inputRequest);
 	}
 
 	@Override

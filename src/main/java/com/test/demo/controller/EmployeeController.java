@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.test.demo.entity.Response;
 import com.test.demo.repository.EmployeeRepository;
+import com.test.demo.request.InputRequest;
 import com.test.demo.entity.Employee;
 
 
@@ -22,11 +23,11 @@ public class EmployeeController {
 	private EmployeeRepository repository;
 
 	@PostMapping(value="/addEmployee")
-	public Response addEmployee(@RequestBody Employee emp) {
+	public Response addEmployee(@RequestBody InputRequest inputRequest) {
 		Response response=new Response();
 		try {
-			repository.save(emp);
-			response.setMessage(emp.getId() + " inserted");
+			repository.save(inputRequest);
+			response.setMessage(inputRequest.getRequestData().getEmployee().getId() + " inserted");
 			response.setStatus(Boolean.TRUE);
 		} catch (Exception e) {
 			e.printStackTrace();

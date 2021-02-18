@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.test.demo.entity.User;
 import com.test.demo.repository.UserRepository;
+import com.test.demo.request.InputRequest;
 import com.test.demo.service.UserService;
 
 
@@ -47,9 +48,11 @@ public class SpringBootMockitoApplicationTests {
 
 	@Test
 	public void saveUserTest() {
-		User user = new User(999, "Pranya", 33, "Pune","pranya@gmail.com");
+		InputRequest inputRequest=new InputRequest();
+		User user=inputRequest.getRequestData().getUser();
+		user = new User(999, "Pranya", 33, "Pune","pranya@gmail.com");
 		when(repository.save(user)).thenReturn(user);
-		assertEquals(user, service.addUser(user));
+		assertEquals(user, service.addUser(inputRequest));
 	}
 
 	@Test
