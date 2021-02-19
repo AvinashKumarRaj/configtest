@@ -42,7 +42,7 @@ public class SpringBootMockitoApplicationTests {
 	public void getUserbyAddressTest() {
 		String address = "Bihar";
 		when(repository.findByAddress(address))
-				.thenReturn(Stream.of(new User(30, "ankit", 28, "Raj Kumar","ankit@gmail.com")).collect(Collectors.toList()));
+				.thenReturn(Stream.of(new User(7871, "ankit", 30, "Bihar","ankit@gmail.com")).collect(Collectors.toList()));
 		assertEquals(1, service.getUserbyAddress(address).size());
 	}
 
