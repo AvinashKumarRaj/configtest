@@ -17,7 +17,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.test.demo.entity.User;
 import com.test.demo.repository.UserRepository;
-import com.test.demo.request.InputRequest;
 import com.test.demo.service.UserService;
 
 
@@ -48,21 +47,13 @@ public class SpringBootMockitoApplicationTests {
 
 	@Test
 	public void saveUserTest() {
-		InputRequest inputRequest=new InputRequest();
-		User user=inputRequest.getRequestData().getUser();
-		user = new User(999, "Pranya", 33, "Pune","pranya@gmail.com");
-//		user.setId(999);
-//		user.setName("Pranya");
-//		user.setAge(33);
-//		user.setAddress("Pune");
-//		user.setEmail("pranya@gmail.com");
+		 User user = new User(999, "Pranya", 33, "Pune","pranya@gmail.com");
 		when(repository.save(user)).thenReturn(user);
-		assertEquals(user, service.addUser(inputRequest));
+		assertEquals(user, service.addUser(user));
 	}
 
 	@Test
 	public void deleteUserTest() {
-//		User user = new User(999, "Pranya", 33, "Pune","pranya@gmail.com");
 		Integer id=7871;
 		service.deleteUser(id);
 		verify(repository, times(1)).deleteById(id);

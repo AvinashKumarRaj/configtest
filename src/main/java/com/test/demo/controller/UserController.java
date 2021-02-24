@@ -24,8 +24,8 @@ public class UserController {
 	private UserService service;
 
 	@PostMapping(value = "/saveUser")
-	public User saveUser(@RequestBody InputRequest inputRequest) {
-		return service.addUser(inputRequest);
+	public User saveUser(@RequestBody User user) {
+		return service.addUser(user);
 	}
 
 	@GetMapping("/getUsers")
