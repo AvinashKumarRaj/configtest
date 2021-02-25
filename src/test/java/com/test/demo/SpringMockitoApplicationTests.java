@@ -5,8 +5,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,7 +24,7 @@ import com.test.demo.request.InputRequest;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringMockitoApplicationTests {
+ class SpringMockitoApplicationTests {
 
 	private MockMvc mockMvc;
 	@Autowired
@@ -32,13 +32,13 @@ public class SpringMockitoApplicationTests {
 
 	ObjectMapper om = new ObjectMapper();
 
-	@Before
-	public void setUp() {
+	@BeforeEach
+	 void setUp() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
 	}
 
 	@Test
-	public void addEmployeeTest() throws Exception {
+	 void addEmployeeTest() throws Exception {
 		InputRequest request = new InputRequest();
 		Employee employee=request.getRequestData().getEmployee();
 		employee.setName("rahul");
@@ -52,7 +52,7 @@ public class SpringMockitoApplicationTests {
 	}
 
 	@Test
-	public void getEmployeesTest() throws Exception {
+	 void getEmployeesTest() throws Exception {
 		MvcResult result = mockMvc
 				.perform(get("/employeeService/getEmployees").content(MediaType.APPLICATION_JSON_VALUE))
 				.andExpect(status().isOk()).andReturn();
