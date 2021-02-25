@@ -29,7 +29,7 @@ import com.test.demo.service.UserService;
 	@Autowired
 	private UserService service;
 
-	@Mock
+	@MockBean
 	private UserRepository repository;
 
 	@Test
