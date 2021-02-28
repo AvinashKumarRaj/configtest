@@ -1,8 +1,11 @@
+echo "file get"
 #!/bin/bash
 # uncomment to debug the script
-# set -x
+echo "read set -x"
+ set -x
 # copy the script below into your app code repo (e.g. ./scripts/build_image.sh) and 'source' it from your pipeline job
-    source ./fetch_git_creds.sh
+  echo "reading fetch"
+  source ./fetch_git_creds.sh
 # alternatively, you can source it from online script:
 #    source <(curl -sSL "https://gitlab.com/eicher-volvo/common/configdemo/-/raw/master/scripts/fetch_git_creds.sh")
 # ------------------
