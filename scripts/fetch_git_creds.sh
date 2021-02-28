@@ -4,9 +4,9 @@
 # copy the script below into your app code repo (e.g. ./scripts/build_image.sh) and 'source' it from your pipeline job
 #    source ./scripts/fetch_git_creds.sh
 # alternatively, you can source it from online script:
-#    source <(curl -sSL "https://raw.githubusercontent.com/open-toolchain/commons/master/scripts/fetch_git_creds.sh")
+#    source <(curl -sSL "https://gitlab.com/eicher-volvo/common/configdemo/-/raw/master/scripts/fetch_git_creds.sh")
 # ------------------
-# source: https://raw.githubusercontent.com/open-toolchain/commons/master/scripts/fetch_git_creds.sh
+  source: https://gitlab.com/eicher-volvo/common/configdemo/-/raw/master/scripts/fetch_git_creds.sh
 
 # This script does perform a fetch of associated git repo credentials and stored it in build.properties,
 # so as a consuming job could leverage these to repost to same or another git repo.
