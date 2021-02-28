@@ -1,6 +1,6 @@
-projectKey=CEP
-serverUrl=http://169.38.80.13:31248
-serverVersion=8.2.0.32929
-dashboardUrl=http://169.38.80.13:31248/dashboard?id=CEP
-ceTaskId=AXfoujgr6UWSD1DlX_v0
-ceTaskUrl=http://169.38.80.13:31248/api/ce/task?id=AXfoujgr6UWSD1DlX_v0
+projectKey=
+serverUrl=
+serverVersion=
+dashboardUrl=
+ceTaskId=
+ceTaskUrl=
