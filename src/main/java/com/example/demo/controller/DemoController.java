@@ -8,6 +8,6 @@ public class DemoController {
 
 	@GetMapping(value = "/check")
 	public String status() {
-		return "My ConfigDemo Project is Working Properly Thanks to Visit";
+		return "Hi My Name is AVINASH I am Sampark DevOps Engginer";
 	}
 }
