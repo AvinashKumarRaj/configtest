@@ -8,6 +8,6 @@ public class DemoController {
 
 	@GetMapping(value = "/check")
 	public String status() {
-		return "Hello this is my configDemo project working fine";
+		return "ho gaya";
 	}
 }
