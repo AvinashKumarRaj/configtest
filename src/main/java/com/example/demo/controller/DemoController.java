@@ -8,6 +8,6 @@ public class DemoController {
 
 	@GetMapping(value = "/check")
 	public String status() {
-		return "ho gaya";
+		return "my url exposed";
 	}
 }
