@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: configdemo
+  template:
+    metadata:
+      labels:
+        app: configdemo
+    spec:
+      containers:
+      - name: configdemo
+        image: sujataavi/configdemo-hub:configdemo-hub
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        resources:
+         limits:
+          cpu: 800m
+          memory: 768Mi
+         requests:
+          cpu: 5m
+          memory: 256Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: configdemo
+  labels:
+    app: configdemo
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: configdemo
+
