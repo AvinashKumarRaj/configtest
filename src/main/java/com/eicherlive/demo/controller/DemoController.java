@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.eicherlive.demo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +13,6 @@ public class DemoController {
 	
 	@GetMapping(value = "/")
 	public String applicationSttaus() {
-		return "Appclication Started..........";
+		return "Application Started..........";
 	}
 }
