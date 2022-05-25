@@ -12,7 +12,7 @@ public class DemoController {
 	}
 	
 	@GetMapping(value = "/")
-	public String applicationSttaus() {
+	public String applicationStatus() {
 		return "Application Started..........";
 	}
 }
