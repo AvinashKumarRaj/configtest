@@ -10,4 +10,9 @@ public class DemoController {
 	public String status() {
 		return "my url exposed";
 	}
+	
+	@GetMapping(value = "/")
+	public String applicationSttaus() {
+		return "Appclication Started..........";
+	}
 }
